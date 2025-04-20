@@ -1,0 +1,170 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Setup */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('assets/background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0e6ff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Initially hide the body content */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+#content-container {
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Profile Picture */
+.profile-picture {
+  display: block;
+  width: 150px;                /* Set size of profile picture */
+  height: 150px;               /* Ensure it's a perfect circle */
+  border-radius: 50%;          /* Make it a circle */
+  margin: 30px auto;           /* Center the image with space above and below */
+  border: 3px solid #fff;      /* White border around the profile picture */
+  box-shadow: 0 0 15px #fff;   /* White glowing shadow effect */
+  object-fit: cover;           /* Ensure the image fills the circle without distortion */
+  position: relative;          /* Relative positioning */
+  z-index: 10;                 /* Ensure it stays on top */
+}
+
+/* Main Name */
+.main-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 250px;            /* Default margin-top for larger screens (desktop) */
+  text-align: center;
+  opacity: 0;  /* Initially hidden */
+  animation: fadeIn 1s forwards 0.5s; /* Fade in after 0.5s */
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; /* White glowing text */
+}
+
+/* Typing Effect */
+.typing-line {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  height: 40px;
+  text-shadow: 0 0 8px #fff, 0 0 15px #fff; /* White glowing text */
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0;  /* Initially hidden */
+  animation: fadeIn 1s forwards 1s; /* Fade in after 1s */
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Socials Container */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  opacity: 0;  /* Initially hidden */
+  animation: fadeIn 1s forwards 1.5s; /* Fade in after 1.5s */
+}
+
+/* Social Box */
+.social-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 250px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #fff;      /* White border */
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 15px #fff50;  /* White glowing box-shadow */
+  transition: 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Font Awesome Icons */
+.social-box i {
+  font-size: 1.5rem; /* Icon size */
+  color: #fff;
+}
+
+/* Social Text */
+.social-box span {
+  flex-grow: 1;
+  text-align: left;
+  font-weight: 500;
+  color: #eee;
+}
+
+/* Arrow */
+.social-box .arrow {
+  font-size: 1.2rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Social Box */
+.social-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px #fff99;  /* White glowing on hover */
+  transform: translateY(-2px);
+}
+
+.social-box:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Layout for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .main-name {
+    margin-top: 100px; /* Adjust the gap on mobile */
+    font-size: 2rem;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-box {
+    width: 220px;
+    font-size: 0.9rem;
+  }
+
+  .typing-line {
+    font-size: 1.2rem;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
